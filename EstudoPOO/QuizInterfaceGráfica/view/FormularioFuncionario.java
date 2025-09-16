@@ -5,7 +5,7 @@ import javax.swing.*;
 public class FormularioFuncionario extends JFrame {
 
     private JTextField txtNome, txtCPF, txtSalario;
-    private JComboBox<String> comboSetor;
+    private JComboBox comboSetor;
     private JRadioButton rbAtendente, rbAjudante, rbRepositor, rbGerente;
     private ButtonGroup grupoCargos;
     private JButton btnSalvar, btnLimpar;
@@ -16,7 +16,7 @@ public class FormularioFuncionario extends JFrame {
         setSize(500, 550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setLayout(null); // sem GridLayout
+        setLayout(null); 
 
         JLabel lblNome = new JLabel("Nome:");
         lblNome.setBounds(20, 20, 100, 25);
@@ -84,14 +84,14 @@ public class FormularioFuncionario extends JFrame {
         btnLimpar.setBounds(240, 250, 90, 30);
         add(btnLimpar);
 
-        // Área de texto
+       
         areaResultado = new JTextArea();
         areaResultado.setEditable(false);
         JScrollPane scroll = new JScrollPane(areaResultado);
         scroll.setBounds(20, 300, 440, 180);
         add(scroll);
 
-        // Botão Salvar
+        
         btnSalvar.addActionListener(e -> {
             String nome = txtNome.getText().trim();
             String cpf = txtCPF.getText().trim();
@@ -109,7 +109,7 @@ public class FormularioFuncionario extends JFrame {
                         "Por favor, preencha todos os campos.",
                         "Erro", JOptionPane.ERROR_MESSAGE);
             } else {
-                // Mostra apenas o último cadastrado
+                
                 areaResultado.setText(
                         "Funcionário salvo\n" +
                         "---------------------------\n" +
@@ -120,7 +120,7 @@ public class FormularioFuncionario extends JFrame {
                         "Salário: R$ " + salario
                 );
 
-                // limpa campos
+                
                 txtNome.setText("");
                 txtCPF.setText("");
                 txtSalario.setText("");
@@ -129,7 +129,7 @@ public class FormularioFuncionario extends JFrame {
             }
         });
 
-        // Botão Limpar
+        
         btnLimpar.addActionListener(e -> {
             txtNome.setText("");
             txtCPF.setText("");
