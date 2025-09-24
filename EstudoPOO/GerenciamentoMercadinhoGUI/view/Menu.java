@@ -1,6 +1,5 @@
 package view;
 
-
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -20,15 +19,12 @@ public class Menu extends JFrame {
         JMenu aju = new JMenu("Ajuda");
 
         JMenuItem sair = new JMenuItem("Sair");
-        JMenuItem dev = new JMenuItem("Desenvolvedor");
         JMenuItem produto = new JMenuItem("Produto");
         JMenuItem funcionario = new JMenuItem("Funcionário");
         JMenuItem sobre = new JMenuItem("Sobre");
 
         arq.add(sair);
-        cad.add(dev);
         cad.add(produto);
-        cad.add(funcionario);
         aju.add(sobre);
 
         JMenuBar bar = new JMenuBar();
@@ -38,7 +34,7 @@ public class Menu extends JFrame {
         bar.add(aju);
 
         
-        dev.addActionListener(new ActionListener() {
+        sobre.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 FormularioDesenvolvedor formDev = new FormularioDesenvolvedor();
                 formDev.setVisible(true);
@@ -59,7 +55,6 @@ public class Menu extends JFrame {
             }
         });
 
-        
         sair.addActionListener(evt -> confirmarSaida());
         
         this.addWindowListener(new WindowAdapter() { 
