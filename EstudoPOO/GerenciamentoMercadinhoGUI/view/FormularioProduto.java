@@ -17,7 +17,6 @@ public class FormularioProduto extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Painel principal com GridLayout
         JPanel painelPrincipal = new JPanel(new GridLayout(6, 2, 5, 5));
         painelPrincipal.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -48,17 +47,17 @@ public class FormularioProduto extends JFrame {
         painelPrincipal.add(btnSalvar);
         painelPrincipal.add(btnLimpar);
 
-        // Área de texto para exibir resultados
+        
         areaResultado = new JTextArea(6, 40);
-        areaResultado.setEditable(false); // só leitura
+        areaResultado.setEditable(false); 
         JScrollPane scroll = new JScrollPane(areaResultado);
 
-        // Layout principal
+       
         setLayout(new BorderLayout());
         add(painelPrincipal, BorderLayout.NORTH);
         add(scroll, BorderLayout.CENTER);
 
-        // Ações dos botões
+        
         btnSalvar.addActionListener(e -> {
             String nome = txtNomeProduto.getText().trim();
             String codigo = txtCodigo.getText().trim();
@@ -71,7 +70,7 @@ public class FormularioProduto extends JFrame {
                         "Preencha todos os campos.",
                         "Erro", JOptionPane.ERROR_MESSAGE);
             } else {
-                areaResultado.setText( // Exibe no JTextArea
+                areaResultado.setText(
                         "Produto salvo\n\n" +
                         "Nome: " + nome + "\n" +
                         "Código: " + codigo + "\n" +
@@ -91,4 +90,5 @@ public class FormularioProduto extends JFrame {
             areaResultado.setText(""); 
         });
     }
+
 }
